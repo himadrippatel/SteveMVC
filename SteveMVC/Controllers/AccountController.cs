@@ -14,6 +14,7 @@ namespace SteveMVC.Controllers
         }
         public IActionResult Index()
         {
+            ViewData["Title"] = "Login";
             return View();
         }
 
@@ -28,7 +29,7 @@ namespace SteveMVC.Controllers
                 HttpContext.Session.SetInt32(SessionKey.UserId, result.Item2.Id);
                 return RedirectToAction("Index", "Home");
             }
-            ModelState.AddModelError("LoginMessage", "incorrect username or password");
+            ModelState.AddModelError("LoginMessage", "Incorrect Username or Password");
             return View(loginView);
         }
 

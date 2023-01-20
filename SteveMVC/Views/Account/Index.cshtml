@@ -14,12 +14,9 @@
 
     <div class="container">
         <div class="screen">
-            <div class="screen__content">
-                <center>
-                    @Html.ValidationMessage("LoginMessage")
-                </center>
+            <div class="screen__content">               
                 <form class="login" asp-action="Index" asp-controller="Account">
-                    @Html.AntiForgeryToken();
+                    @Html.AntiForgeryToken()
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
                         <input asp-for="UserName" type="text" class="login__input" placeholder="User name/Email">
@@ -31,9 +28,10 @@
                     </div>
                     <span asp-validation-for="Password"></span>
                     <button class="button login__submit" type="submit">
-                        <span class="button__text">Log In Now</span>
+                        <span class="button__text">Log In</span>
                         <i class="button__icon fas fa-chevron-right"></i>
                     </button>
+                    @Html.ValidationMessage("LoginMessage")
                 </form>
             </div>
             <div class="screen__background">
