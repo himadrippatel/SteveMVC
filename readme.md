@@ -1,0 +1,2 @@
+---Add default data into your database
+--INSERT INTO tblUsers VALUES('admin','admin','admin','0000000000','admin@gmail.com',GETDATE(),GETDATE())

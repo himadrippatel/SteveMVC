@@ -1,0 +1,34 @@
+﻿@model OpenAIViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="card">
+    <div class="card-header">
+        <div class="card-title">
+            Playground
+        </div>
+    </div>
+    <div class="card-body">
+        <form asp-action="Index" asp-controller="Home">
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea rows="8" asp-for="Request" class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+            </div>
+            @if (!string.IsNullOrEmpty(Model.Response))
+            {
+                <div class="row">
+                    <div class="col-md-12">
+                        <label>OutPut</label>
+                        <textarea rows="4" asp-for="Response" class="form-control"></textarea>
+                    </div>
+                </div>
+            }
+        </form>
+    </div>
+</div>
